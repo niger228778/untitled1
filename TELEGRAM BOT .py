@@ -1,6 +1,7 @@
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import CommandStart
 import asyncio
+from aiogram.filters.command import Command
 
 API_TOKEN = '7060030383:AAHPgrlOgGXBxXL31_N1ztmli_yYsz1SSQE'
 
@@ -34,15 +35,15 @@ def handler (message):
     links[message.text](message)
 
 
-@dp.message(buy("Я лох?"))
+@dp.message(Command("/Hello"))
 async def cmd_test1(message: types.Message):
     await message.reply("Ты лох")
 
-@dp.message(catalog("Привет"))
+@dp.message(Command("/qwe"))
 async def cmd_test2(message: types.Message):
     await message.reply("Привет пупсик")
 
-    #https://mastergroosha.github.io/aiogram-3-guide/quickstart/
+
 
 
 
